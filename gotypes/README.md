@@ -141,10 +141,10 @@ the _hello, world_ program, supplied as a string.
 Later examples will be variations on this one, and we'll often omit
 boilerplate details such as parsing.
 To check out and build the examples,
-run `go get golang.org/x/example/gotypes/...`.
+run `go get github.com/purrrplelipton/golang.example/hello/gotypes/...`.
 
 
-	// go get golang.org/x/example/gotypes/pkginfo
+	// go get github.com/purrrplelipton/golang.example/hello/gotypes/pkginfo
 
 ```
 package main
@@ -251,7 +251,7 @@ Finally, the program prints the attributes of the package, shown below.
 
 
 ```
-$ go build golang.org/x/example/gotypes/pkginfo
+$ go build github.com/purrrplelipton/golang.example/hello/gotypes/pkginfo
 $ ./pkginfo
 Package  "cmd/hello"
 Name:    main
@@ -500,7 +500,7 @@ The function below prints the location of each referring and defining
 identifier in the input program, and the object it refers to.
 
 
-	// go get golang.org/x/example/gotypes/defsuses
+	// go get github.com/purrrplelipton/golang.example/hello/gotypes/defsuses
 
 ```
 func PrintDefsUses(fset *token.FileSet, files ...*ast.File) error {
@@ -530,7 +530,7 @@ func PrintDefsUses(fset *token.FileSet, files ...*ast.File) error {
 Let's use the _hello, world_ program again as the input:
 
 
-	// go get golang.org/x/example/gotypes/hello
+	// go get github.com/purrrplelipton/golang.example/hello/gotypes/hello
 
 ```
 package main
@@ -547,7 +547,7 @@ This is what it prints:
 
 
 ```
-$ go build golang.org/x/example/gotypes/defsuses
+$ go build github.com/purrrplelipton/golang.example/hello/gotypes/defsuses
 $ ./defsuses
 hello.go:1:9: "main" defines <nil>
 hello.go:5:6: "main" defines func hello.main()
@@ -791,7 +791,7 @@ Observe that the `ParseComments` flag directs the parser to
 preserve comments in the input.
 
 
-	// go get golang.org/x/example/gotypes/lookup
+	// go get github.com/purrrplelipton/golang.example/hello/gotypes/lookup
 
 ```
 func main() {
@@ -861,7 +861,7 @@ Here's the output:
 
 
 ```
-$ go build golang.org/x/example/gotypes/lookup
+$ go build github.com/purrrplelipton/golang.example/hello/gotypes/lookup
 $ ./lookup
 At hello.go:6:1,        "append" = builtin append
 At hello.go:8:9,        "fmt" = package fmt
@@ -1475,7 +1475,7 @@ The statement below inspects every expression within the AST of a single
 type-checked file and prints its type, value, and mode:
 
 
-	// go get golang.org/x/example/gotypes/typeandvalue
+	// go get github.com/purrrplelipton/golang.example/hello/gotypes/typeandvalue
 
 ```
 // f is a parsed, type-checked *ast.File.
@@ -1525,7 +1525,7 @@ the program prints:
 
 
 ```
-$ go build golang.org/x/example/gotypes/typeandvalue
+$ go build github.com/purrrplelipton/golang.example/hello/gotypes/typeandvalue
 $ ./typeandvalue
 make(map[string]int)            mode:  value
                                 type:  map[string]int
@@ -1581,7 +1581,7 @@ call `x.f()` was intended;
 comparing a method `x.f` against nil is a common mistake.
 
 
-	// go get golang.org/x/example/gotypes/nilfunc
+	// go get github.com/purrrplelipton/golang.example/hello/gotypes/nilfunc
 
 ```
 // CheckNilFuncComparison reports unintended comparisons
@@ -1648,7 +1648,7 @@ the program reports these errors:
 
 
 ```
-$ go build golang.org/x/example/gotypes/nilfunc
+$ go build github.com/purrrplelipton/golang.example/hello/gotypes/nilfunc
 $ ./nilfunc
 input.go:7:5: comparison of function Bytes == nil is always false
 input.go:7:25: comparison of function Repeat != nil is always true
@@ -1902,7 +1902,7 @@ The `main` function (not shown) loads the specified package and
 calls `PrintSkeleton` with the remaining two arguments:
 
 
-	// go get golang.org/x/example/gotypes/skeleton
+	// go get github.com/purrrplelipton/golang.example/hello/gotypes/skeleton
 
 ```
 func PrintSkeleton(pkg *types.Package, ifacename, concname string) error {
@@ -1976,7 +1976,7 @@ The following program inspects all pairs of package-level named types
 in `pkg`, and reports the types that satisfy each interface type.
 
 
-	// go get golang.org/x/example/gotypes/implements
+	// go get github.com/purrrplelipton/golang.example/hello/gotypes/implements
 
 ```
 // Find all named types at package level.
@@ -2008,7 +2008,7 @@ for _, T := range allNamed {
 Given this input,
 
 
-	// go get golang.org/x/example/gotypes/implements
+	// go get github.com/purrrplelipton/golang.example/hello/gotypes/implements
 
 ```
 const input = `package main
@@ -2030,7 +2030,7 @@ the program prints:
 
 
 ```
-$ go build golang.org/x/example/gotypes/implements
+$ go build github.com/purrrplelipton/golang.example/hello/gotypes/implements
 $ ./implements
 *hello.A satisfies hello.I
 hello.B satisfies hello.I
@@ -2185,7 +2185,7 @@ Such a tool could help identify inefficient parameter passing in your
 programs.
 
 
-	// go get golang.org/x/example/gotypes/hugeparam
+	// go get github.com/purrrplelipton/golang.example/hello/gotypes/hugeparam
 
 ```
 var bytesFlag = flag.Int("bytes", 48, "maximum parameter size in bytes")
@@ -2347,7 +2347,7 @@ for a single package `pkgpath`,
 plus exported type information for its dependencies.
 
 
-	// go get golang.org/x/example/gotypes/doc
+	// go get github.com/purrrplelipton/golang.example/hello/gotypes/doc
 
 ```
 pkgpath, name := os.Args[1], os.Args[2]
@@ -2377,7 +2377,7 @@ By default, `go/packages`, instructs the parser to retain comments during parsin
 The rest of the program prints the output:
 
 
-	// go get golang.org/x/example/gotypes/doc
+	// go get github.com/purrrplelipton/golang.example/hello/gotypes/doc
 
 ```
 // Print the object and its methods (incl. location of definition).

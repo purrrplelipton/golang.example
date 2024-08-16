@@ -1,4 +1,4 @@
-module golang.org/x/example
+module github.com/purrrplelipton/golang.example/hello
 
 go 1.18
 

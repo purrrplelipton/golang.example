@@ -1,4 +1,4 @@
-module golang.org/x/example/outyet
+module github.com/purrrplelipton/golang.example/hello/outyet
 
 go 1.19
 
